@@ -3,35 +3,107 @@
 
 <head>
     <title>Pop-Up Farm IoD (Internet of Disaster) ⓒ DesignFarmers</title>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
+    <!-- CSS style 태그에서 #은 id값에 .은 class값 앞에 붙임. 그런데 id는 class처럼 포괄적으로 쓸 수 없고 중복되어서는 안됨.
+        그래서 "id > class > tag"의 순서로 컴퓨터가 인식하는 데 우선 순위가 생김 -->
+    <!-- CSS 작업은 브라우저에서 마우스 右클릭의 '검사' 옵션을 통해 해당 tag에 적용된 style 값을 확인하는 것에서 시작함. -->
+    <style>
+        body {
+            margin: 10px;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+        }
+
+        #grid #article {
+            padding: 25px;
+        }
+
+        #active {
+            color: chocolate;
+        }
+
+        .visited {
+            color: burlywood;
+        }
+
+        a {
+            color: rgb(75, 75, 75);
+            text-decoration: none;
+        }
+
+        h1 {
+            font-size: 40px;
+            text-align: center;
+            border-bottom: 1px lightslategray solid;
+            /*border-width: 5px;
+            border-color: lightslategray;
+            border-style: solid;*/
+            margin: 0px;
+            padding: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            text-align: center;
+            border-bottom: 1px lightslategrey solid;
+            margin: 0px;
+            padding: 10px;
+        }
+
+        #grid nav {
+            border-right: 1px lightslategrey solid;
+            /*width: 220px;*/
+            margin: 0px;
+            padding: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <h1>
-        <a href='./index.html'>팝업팜 IoD</a>
+        <a href="./index.html" class="visited" id="active">팝업팜 IoD</a>
+        <!-- traditional CSS e.g. --
+        <a href="./index.html" style="color: burlywood">팝업팜 IoD</a>
+        -->
+        <!-- traditional CSS e.g. --
+        <a href="./index.html">
+            <font color="black">팝업팜 IoD</font>
+        </a>
+        -->
     </h1>
     <h3>라이프케어 토피어리 (Lifecare Topiary)</h3>
-    <nav>
-        <ul>
-            <li>만든이</li>
-            <li>팝업팜 IoD 프로젝트</li>
-            <ol>
-                <li>타임라인</li>
-                <li>프로젝트 소개</li>
-                <li>라이선스</li>
-            </ol>
-            <li>테스트</li>
-        </ul>
-    </nav>
-    <p>
-        <strong>팝업팜 IoD</strong>는 <u>생활 안전</u>을 위한 <strong>라이프케어 토피어리</strong>입니다.
-        <br>
-        <strong>Pop-Up Farm</strong> is an <u>artgoods for your lifecare</u> namely "<strong>Lifecare Topiary</strong>"
-    </p>
-    <p>Contact: snowfall.hamn@gmail.com
-        <br>https://mobibi76.github.io/popupfarmiod/.
-    </p>
-    <img src='./source/image/Concept1.png' width='18%'>
+    <div id="grid">
+        <nav>
+            <ul>
+                <li>만든이</li>
+                <li>팝업팜 IoD 프로젝트</li>
+                <ol>
+                    <li>타임라인</li>
+                    <li>프로젝트 소개</li>
+                    <li>라이선스</li>
+                </ol>
+                <li>테스트</li>
+            </ul>
+        </nav>
+        <div id="article">
+            <p>
+                <strong>팝업팜 IoD</strong>는 <u>생활 안전</u>을 위한 <strong>라이프케어 토피어리</strong>입니다.
+                <br>
+                <strong>Pop-Up Farm</strong> is an art-goods for your lifecare namely "<strong>Lifecare Topiary</strong>"
+            </p>
+            <p>Contact: snowfall.hamn@gmail.com
+                <br>
+                <a href="https://mobibi76.github.io/popupfarmiod/." class="visited">**GitHub에서 확인하기**</a>
+                <!-- traditional CSS e.g. --
+                <a href="https://mobibi76.github.io/popupfarmiod/." style="text-decoration: underline">**GitHub에서 확인하기**</a>
+                -->
+            </p>
+            <img src="./source/image/Concept1.png" width="30%">
+        </div>
+    </div>
 </body>
 
 </html>
