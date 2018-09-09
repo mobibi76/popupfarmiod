@@ -52,3 +52,20 @@ h3 {
     margin: 0px;
     padding: 10px;
 }
+@media(max-width: 800px) {
+    #grid {
+        display: block;
+    }
+    
+    #grid #article {
+        padding: 25px;
+    }
+    
+    #grid nav {
+        border-right: none;
+        border-bottom: 1px lightslategrey solid;
+        /*width: 220px;*/
+        margin: 0px;
+        padding: 10px;
+    }
+}
