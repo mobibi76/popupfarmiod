@@ -4,63 +4,85 @@
 <head>
     <title>Pop-Up Farm IoD (Internet of Disaster) ⓒ DesignFarmers</title>
     <meta charset="utf-8">
-    <!-- CSS style 태그에서 #은 id값에 .은 class값 앞에 붙임. 그런데 id는 class처럼 포괄적으로 쓸 수 없고 중복되어서는 안됨.
-        그래서 "id > class > tag"의 순서로 컴퓨터가 인식하는 데 우선 순위가 생김 -->
-    <!-- CSS 작업은 브라우저에서 마우스 右클릭의 '검사' 옵션을 통해 해당 tag에 적용된 style 값을 확인하는 것에서 시작함. -->
+    <!-- CSS style 태그에서 #은 id값 앞에 .은 class값 앞에 위치. ** id는 class처럼 포괄적으로 사용 불가 (id는 중복해서 사용 불가).
+        그래서 "id > class > tag"의 우선 순위로 컴퓨터가 수행 -->
+    <!-- CSS 작업은 브라우저에서 마우스 右클릭의 '검사' 옵션을 통해 해당 tag에 적용된 style 값을 확인하는 것에서 시작 -->
     <!-- <style>
-        #grid {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-        }
+#grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+}
 
-        #grid #article {
-            padding: 25px;
-        }
+#grid #article {
+    padding: 25px;
+}
 
-        #grid nav {
-            border-right: 1px lightslategrey solid;
-            /*width: 220px;*/
-            margin: 0px;
-            padding: 10px;
-        }
+#grid nav {
+    border-right: 1px lightslategrey solid;
+    /*width: 220px;*/
+    margin: 0px;
+    padding: 10px;
+}
 
-        #active {
-            color: chocolate;
-        }
+#active {
+    color: chocolate;
+}
 
-        .visited {
-            color: burlywood;
-        }
+.visited {
+    color: rgba(5, 100, 190, 0.75);
+    font-weight: bold;
+}
 
-        body {
-            margin: 10px;
-        }
+.gitstyle {
+    color: burlywood;
+}
 
-        a {
-            color: rgb(75, 75, 75);
-            text-decoration: none;
-        }
+body {
+    margin: 10px;
+}
 
-        h1 {
-            font-size: 40px;
-            text-align: center;
-            border-bottom: 1px lightslategray solid;
-            /*border-width: 5px;
-            border-color: lightslategray;
-            border-style: solid;*/
-            margin: 0px;
-            padding: 10px;
-        }
+a {
+    color: rgb(75, 75, 75);
+    text-decoration: none;
+}
 
-        h3 {
-            font-size: 20px;
-            text-align: center;
-            border-bottom: 1px lightslategrey solid;
-            margin: 0px;
-            padding: 10px;
-        }
-    </style> 아래의 link 태그를 활용하여 다양한 CSS를 불러올 수 있음. 아래의 style.css는 위의 내용을 CSS로 저장한 내용임 -->
-    <link rel="stylesheet" href="style.css">
+h1 {
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 1px lightslategray solid;
+    /*border-width: 5px;
+    border-color: lightslategray;
+    border-style: solid;*/
+    margin: 0px;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 1px lightslategrey solid;
+    margin: 0px;
+    padding: 10px;
+}
+@media(max-width: 800px) {
+    #grid {
+        display: block;
+    }
+    
+    #grid #article {
+        padding: 25px;
+    }
+    
+    #grid nav {
+        border-right: none;
+        border-bottom: 1px lightslategrey solid;
+        /*width: 220px;*/
+        margin: 0px;
+        padding: 10px;
+    }
+}
+    </style> 아래의 link 태그를 활용하여 다양한 CSS를 로드. 아래의 style.css는 위의 내용을 CSS로 저장한 내용 -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -76,10 +98,23 @@
         -->
     </h1>
     <h3>라이프케어 토피어리 (Lifecare Topiary)</h3>
+    <!-- 아래는 HTML에 JavaScript를 사용하는 방법의 하나인 "이벤트" - 여기에서는 onclick을 사용 - 를 사용한 예
+     다음은 Color 버튼의 해석
+     해석: Color 버튼을 클릭하면 이 문서에서 body에 해당하는 부분의 스타일 중 배경색(현재 whitesmoke로 설정)이 바뀌다
+     그리고 body태그 내 text(내용)는 RGB(75, 75, 75)의 색이 되다
+    -->
+    <input type="button" value="Color" onclick="
+        document.querySelector('body').style.backgroundColor='whitesmoke';
+        document.querySelector('body').style.color='rgb(75, 75, 75)';
+        ">
+    <input type="button" value="Origin" onclick="
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='rgb(75, 75, 75)';
+        ">
     <div id="grid">
         <nav>
             <ul>
-                <li>만든이</li>
+                <li><a href="./aboutus/aboutus.html">만든이</a></li>
                 <li>팝업팜 IoD 프로젝트</li>
                 <ol>
                     <li>타임라인</li>
@@ -97,8 +132,8 @@
             </p>
             <p>Contact: snowfall.hamn@gmail.com
                 <br>
-                <a href="https://mobibi76.github.io/popupfarmiod/." class="visited">**GitHub에서 확인하기**</a>
-                <!-- traditional CSS e.g. --
+                <a href="https://mobibi76.github.io/popupfarmiod/." class="gitstyle">**GitHub에서 확인하기**</a>
+                <!-- 아래는 전통적인 CSS 사용 방식인 style의 개별 적용으로 비효율 증가 --
                 <a href="https://mobibi76.github.io/popupfarmiod/." style="text-decoration: underline">**GitHub에서 확인하기**</a>
                 -->
             </p>

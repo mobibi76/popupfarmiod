@@ -1,6 +1,3 @@
-/*CSS style 태그에서 #은 id값에 .은 class값 앞에 붙임. 그런데 id는 class처럼 포괄적으로 쓸 수 없고 중복되어서는 안됨.
-그래서 "id > class > tag"의 순서로 컴퓨터가 인식하는 데 우선 순위가 생김.*/
-/*CSS 작업은 브라우저에서 마우스 右클릭의 '검사' 옵션을 통해 해당 tag에 적용된 style 값을 확인하는 것에서 시작함.*/
 #grid {
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -22,6 +19,11 @@
 }
 
 .visited {
+    color: rgba(5, 100, 190, 0.75);
+    font-weight: bold;
+}
+
+.gitstyle {
     color: burlywood;
 }
 
