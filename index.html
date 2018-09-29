@@ -103,13 +103,30 @@ h3 {
      해석: Color 버튼을 클릭하면 이 문서에서 body에 해당하는 부분의 스타일 중 배경색(현재 whitesmoke로 설정)이 바뀌다
      그리고 body태그 내 text(내용)는 RGB(75, 75, 75)의 색이 되다
     -->
-    <input type="button" value="Color" onclick="
-        document.querySelector('body').style.backgroundColor='whitesmoke';
-        document.querySelector('body').style.color='rgb(75, 75, 75)';
+    <!--
+    <input type="button" value="Off" onclick="
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='whitesmoke';
         ">
-    <input type="button" value="Origin" onclick="
+    <input type="button" value="On" onclick="
         document.querySelector('body').style.backgroundColor='white';
         document.querySelector('body').style.color='rgb(75, 75, 75)';
+        ">
+    -->
+    <!-- 아래는 위 input 태그의 각 Off 및 On 버튼을 하나의 Toggle버튼으로 만든 예로 JavaScript의 조건문 if - else를 활용
+    -->
+    <input type="button" value="Off" onclick="
+        if(document.querySelector('body').dataset.mode==='On'){
+            document.querySelector('body').style.backgroundColor='white';
+            document.querySelector('body').style.color='rgb(75, 75, 75)';
+            this.value='Off';
+            document.querySelector('body').dataset.mode='Off';
+        } else {
+            document.querySelector('body').style.backgroundColor='black';
+            document.querySelector('body').style.color='whitesmoke';
+            this.value='On';
+            document.querySelector('body').dataset.mode='On';
+        }
         ">
     <div id="grid">
         <nav>
@@ -136,6 +153,11 @@ h3 {
                 <!-- 아래는 전통적인 CSS 사용 방식인 style의 개별 적용으로 비효율 증가 --
                 <a href="https://mobibi76.github.io/popupfarmiod/." style="text-decoration: underline">**GitHub에서 확인하기**</a>
                 -->
+            </p>
+            <p style="color: darkcyan;">
+                쇼셜댓글서비스 웹 설치 livere.com - 웹서버 필수<br>
+                채팅서비스 웹 설치 tawk.to - 웹서버 필수<br>
+                방문자분석 analytics.google.com - 웹사이트 등록 (Head Tag 안에 삽입)
             </p>
             <img src="./source/image/Concept1.png" width="30%">
         </div>
