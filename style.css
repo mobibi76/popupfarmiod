@@ -1,3 +1,7 @@
+#active {
+    color: chocolate;
+}
+
 #grid {
     display: grid;
     grid-template-columns: 220px 1fr;
@@ -9,13 +13,16 @@
 
 #grid nav {
     border-right: 1px lightslategrey solid;
-    /*width: 220px;*/
     margin: 0px;
     padding: 10px;
 }
 
-#active {
-    color: chocolate;
+#toggle {
+    margin: 2px;
+}
+
+.gitstyle {
+    color: burlywood;
 }
 
 .visited {
@@ -23,26 +30,19 @@
     font-weight: bold;
 }
 
-.gitstyle {
-    color: burlywood;
+a {
+    color: rgb(75, 75, 75);
+    text-decoration: none;
 }
 
 body {
     margin: 10px;
 }
 
-a {
-    color: rgb(75, 75, 75);
-    text-decoration: none;
-}
-
 h1 {
     font-size: 40px;
     text-align: center;
     border-bottom: 1px lightslategray solid;
-    /*border-width: 5px;
-    border-color: lightslategray;
-    border-style: solid;*/
     margin: 0px;
     padding: 10px;
 }
@@ -54,6 +54,7 @@ h3 {
     margin: 0px;
     padding: 10px;
 }
+
 @media(max-width: 800px) {
     #grid {
         display: block;
@@ -66,7 +67,6 @@ h3 {
     #grid nav {
         border-right: none;
         border-bottom: 1px lightslategrey solid;
-        /*width: 220px;*/
         margin: 0px;
         padding: 10px;
     }

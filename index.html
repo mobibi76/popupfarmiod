@@ -1,167 +1,58 @@
 <!doctype html>
 <html>
 
-<head>
-    <title>Pop-Up Farm IoD (Internet of Disaster) ⓒ DesignFarmers</title>
-    <meta charset="utf-8">
-    <!-- CSS style 태그에서 #은 id값 앞에 .은 class값 앞에 위치. ** id는 class처럼 포괄적으로 사용 불가 (id는 중복해서 사용 불가).
-        그래서 "id > class > tag"의 우선 순위로 컴퓨터가 수행 -->
-    <!-- CSS 작업은 브라우저에서 마우스 右클릭의 '검사' 옵션을 통해 해당 tag에 적용된 style 값을 확인하는 것에서 시작 -->
-    <!-- <style>
-#grid {
-    display: grid;
-    grid-template-columns: 220px 1fr;
-}
+    <head>
+        <title>Pop-Up Farm Lifecare Topiary ⓒ RiskWork</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./style.css">
+    </head>
 
-#grid #article {
-    padding: 25px;
-}
+    <body>
+        <h1>
+            <a href="./index.html" class="visited" id="active">팝업팜 @RiskWork</a>
+        </h1>
 
-#grid nav {
-    border-right: 1px lightslategrey solid;
-    /*width: 220px;*/
-    margin: 0px;
-    padding: 10px;
-}
+        <h3>라이프케어 토피어리 (Lifecare Topiary)</h3>
+ 
+        <!--<input id="toggle" type="button" value="고대비 켜기" onclick="
+            if(document.querySelector('body').dataset.mode==='고대비 끄기'){
+                document.querySelector('body').style.backgroundColor='white';
+                document.querySelector('body').style.color='rgb(75, 75, 75)';
+                this.value='고대비 켜기';
+                document.querySelector('body').dataset.mode='고대비 켜기';
+            } else {
+                document.querySelector('body').style.backgroundColor='black';
+                document.querySelector('body').style.color='whitesmoke';
+                this.value='고대비 끄기';
+                document.querySelector('body').dataset.mode='고대비 끄기';
+            }
+        >-->
 
-#active {
-    color: chocolate;
-}
+        <div id="grid">
+            <nav>
+                <ul>
+                    <li><a href="./index.html" class="visited">팝업팜</a></li>
+                    <ul>
+                        <li><a href="./aboutus/aboutus.html">작가</a></li>
+                        <li>콘텐츠</li>
+                        <li>라이선스</li>
+                    </ul>
+                    <li>테스트</li>
+                </ul>
+            </nav>
 
-.visited {
-    color: rgba(5, 100, 190, 0.75);
-    font-weight: bold;
-}
+            <div id="article">
+                <p>
+                    <strong>팝업팜</strong> <u>@RiskWork</u>는 <strong>라이프케어 토피어리</strong>를 디자인합니다.
+                    <br>
+                    디자인 콘셉트는 "반려식물과 함께하는 커뮤니티 기반 라이프케어" 입니다. 
+                </p>
 
-.gitstyle {
-    color: burlywood;
-}
-
-body {
-    margin: 10px;
-}
-
-a {
-    color: rgb(75, 75, 75);
-    text-decoration: none;
-}
-
-h1 {
-    font-size: 40px;
-    text-align: center;
-    border-bottom: 1px lightslategray solid;
-    /*border-width: 5px;
-    border-color: lightslategray;
-    border-style: solid;*/
-    margin: 0px;
-    padding: 10px;
-}
-
-h3 {
-    font-size: 20px;
-    text-align: center;
-    border-bottom: 1px lightslategrey solid;
-    margin: 0px;
-    padding: 10px;
-}
-@media(max-width: 800px) {
-    #grid {
-        display: block;
-    }
-    
-    #grid #article {
-        padding: 25px;
-    }
-    
-    #grid nav {
-        border-right: none;
-        border-bottom: 1px lightslategrey solid;
-        /*width: 220px;*/
-        margin: 0px;
-        padding: 10px;
-    }
-}
-    </style> 아래의 link 태그를 활용하여 다양한 CSS를 로드. 아래의 style.css는 위의 내용을 CSS로 저장한 내용 -->
-    <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-    <h1>
-        <a href="./index.html" class="visited" id="active">팝업팜 IoD</a>
-        <!-- traditional CSS e.g. --
-        <a href="./index.html" style="color: burlywood">팝업팜 IoD</a>
-        -->
-        <!-- traditional CSS e.g. --
-        <a href="./index.html">
-            <font color="black">팝업팜 IoD</font>
-        </a>
-        -->
-    </h1>
-    <h3>라이프케어 토피어리 (Lifecare Topiary)</h3>
-    <!-- 아래는 HTML에 JavaScript를 사용하는 방법의 하나인 "이벤트" - 여기에서는 onclick을 사용 - 를 사용한 예
-     다음은 Color 버튼의 해석
-     해석: Color 버튼을 클릭하면 이 문서에서 body에 해당하는 부분의 스타일 중 배경색(현재 whitesmoke로 설정)이 바뀌다
-     그리고 body태그 내 text(내용)는 RGB(75, 75, 75)의 색이 되다
-    -->
-    <!--
-    <input type="button" value="Off" onclick="
-        document.querySelector('body').style.backgroundColor='black';
-        document.querySelector('body').style.color='whitesmoke';
-        ">
-    <input type="button" value="On" onclick="
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='rgb(75, 75, 75)';
-        ">
-    -->
-    <!-- 아래는 위 input 태그의 각 Off 및 On 버튼을 하나의 Toggle버튼으로 만든 예로 JavaScript의 조건문 if - else를 활용
-    -->
-    <input type="button" value="Off" onclick="
-        if(document.querySelector('body').dataset.mode==='On'){
-            document.querySelector('body').style.backgroundColor='white';
-            document.querySelector('body').style.color='rgb(75, 75, 75)';
-            this.value='Off';
-            document.querySelector('body').dataset.mode='Off';
-        } else {
-            document.querySelector('body').style.backgroundColor='black';
-            document.querySelector('body').style.color='whitesmoke';
-            this.value='On';
-            document.querySelector('body').dataset.mode='On';
-        }
-        ">
-    <div id="grid">
-        <nav>
-            <ul>
-                <li><a href="./aboutus/aboutus.html">만든이</a></li>
-                <li>팝업팜 IoD 프로젝트</li>
-                <ol>
-                    <li>타임라인</li>
-                    <li>프로젝트 소개</li>
-                    <li>라이선스</li>
-                </ol>
-                <li>테스트</li>
-            </ul>
-        </nav>
-        <div id="article">
-            <p>
-                <strong>팝업팜 IoD</strong>는 <u>생활 안전</u>을 위한 <strong>라이프케어 토피어리</strong>입니다.
-                <br>
-                <strong>Pop-Up Farm</strong> is an art-goods for your lifecare namely "<strong>Lifecare Topiary</strong>"
-            </p>
-            <p>Contact: snowfall.hamn@gmail.com
-                <br>
-                <a href="https://mobibi76.github.io/popupfarmiod/." class="gitstyle">**GitHub에서 확인하기**</a>
-                <!-- 아래는 전통적인 CSS 사용 방식인 style의 개별 적용으로 비효율 증가 --
-                <a href="https://mobibi76.github.io/popupfarmiod/." style="text-decoration: underline">**GitHub에서 확인하기**</a>
-                -->
-            </p>
-            <p style="color: darkcyan;">
-                쇼셜댓글서비스 웹 설치 livere.com - 웹서버 필수<br>
-                채팅서비스 웹 설치 tawk.to - 웹서버 필수<br>
-                방문자분석 analytics.google.com - 웹사이트 등록 (Head Tag 안에 삽입)
-            </p>
-            <img src="./source/image/Concept1.png" width="30%">
+                <p>연락처: snowfall.hamn@gmail.com
+                </p>
+                <img src="./source/image/Concept1.png" width="65%">
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 
 </html>
