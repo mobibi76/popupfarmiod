@@ -11,10 +11,18 @@
     padding: 25px;
 }
 
+#grid #article #aboutmyself {
+    color: rosybrown;
+}
+
 #grid nav {
     border-right: 1px lightslategrey solid;
     margin: 0px;
     padding: 10px;
+}
+
+#lv-container {
+    width: 80%;
 }
 
 #toggle {
