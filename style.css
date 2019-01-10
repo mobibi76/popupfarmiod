@@ -23,6 +23,10 @@
     background-color: ghostwhite;
 }
 
+#grid nav li {
+    border-bottom: 1px lightslategray dotted;
+}
+
 #lv-container {
     width: 80%;
 }
