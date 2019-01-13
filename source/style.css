@@ -23,6 +23,11 @@
     background-color: ghostwhite;
 }
 
+#grid #nav a {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
 #grid #nav li {
     border-bottom: 1px lightslategray dotted;
 }
