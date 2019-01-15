@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Pop Up Farm Lifecare Topiary ⓒRiskWork/Data of Risk</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../../source/style.css">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131440455-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-131440455-1');
+        </script>
+        <!---->
+        
+        <!-- jQuery Google CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!---->
+
+        <!-- fetch API polyfill -->
+        <script src="../../source/fetch.js"></script>
+        
+        <!--<script src="./source/contrastcolors.js"></script>-->
+    </head>
+
+    <body>
+        <h1>
+            <a href="./indexEN.html">Pop-Up Farm @RiskWork/DoR</a>
+        </h1>
+
+        <h3>「Lifecare Topiary」 and Agritech : Data of Risk</h3>
+ 
+        <!--<input id="toggle" type="button" value="ON" onclick="highContrast(this);">-->
+        <input id="toggle" type="button" Value="한글" onclick="location.href='../../index.html';">
+        <input id="toggle" type="button" Value="ENGLISH" onclick="location.href='./indexEN.html';">
+        <input id="toggle" type="button" Value="日本語" onclick="location.href='../JP/indexJP.html';">
+
+        <div id="grid">
+            <div id="nav"></div>
+
+            <div id="article">
+                <div id="contents"></div>
+
+                <!-- LiveRe City Deployment -->
+                <div id="lv-container" data-id="city" data-uid="MTAyMC80MDk4Mi8xNzUwNw==">
+                    <script type="text/javascript">
+                        (function(d, s) {
+                            var j, e = d.getElementsByTagName(s)[0];
+                
+                            if (typeof LivereTower === 'function') { return; }
+                
+                                j = d.createElement(s);
+                                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                                j.async = true;
+                
+                                e.parentNode.insertBefore(j, e);
+                        })(document, 'script');
+                    </script>
+                </div>
+                <!---->
+            </div>
+        </div>
+
+        <script>
+            fetch('MenuList').then(function(response){
+                response.text().then(function(text){
+                    document.querySelector('#nav').innerHTML=text;
+                })
+            });
+
+            fetch('Home').then(function(response){
+                response.text().then(function(text){
+                    document.querySelector('#contents').innerHTML=text;
+                })
+            });
+
+            function introFetch(pageTitle){
+                fetch(pageTitle).then(function(response){
+                    response.text().then(function(text){
+                        document.querySelector('#contents').innerHTML=text;
+                    })
+                });
+            }
+        </script>
+    </body>
+
+</html>
