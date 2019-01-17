@@ -1,3 +1,15 @@
+<span id="username"></span><input type="button" id="loginButton" value="Processing" onclick="
+    if(this.value === 'Login'){
+        gAuth.signIn().then(function(){
+            loginStatement();
+        });
+    } else {
+        gAuth.signOut().then(function(){
+            loginStatement();
+        });
+    }
+">
+
 <p>
     <strong>"Pop-Up Farm</strong>(<u>@RiskWork/DoR</u>)" is a solution of <strong>lifecare topiary</strong> based on heuristics of IoT.<br>
     Solving single-person households and aging society's issues with "community-based living care" is main interest.<br>

@@ -1,3 +1,15 @@
+<span id="username"></span><input type="button" id="loginButton" value="Processing" onclick="
+    if(this.value === 'Login'){
+        gAuth.signIn().then(function(){
+            loginStatement();
+        });
+    } else {
+        gAuth.signOut().then(function(){
+            loginStatement();
+        });
+    }
+">
+
 <p>
     <strong>ポップアップ農場</strong><u>@RiskWork/DoR</u>はヒューリスティックIoTによる<strong>生活監視トピアリー</strong>を設計します。<br>
     "伴侶植物と一緒に、コミュニティベースの生活観測"の概念に1人世帯と高齢化社会の問題の解決を図っています。<br>

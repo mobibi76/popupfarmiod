@@ -20,13 +20,55 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!---->
 
-        <!-- fetch API polyfill -->
+        <!-- Fetch API polyfill -->
         <script src="../../source/fetch.js"></script>
+
+        <!-- Google Login -->
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script>
+            function loginStatement(){
+                var loginButton = document.querySelector('#loginbutton');
+                var userName = document.querySelector('#username');
+                if(gAuth.isSignedIn.get()){
+                    loginButton.value='Logout';
+                    var userProfile = gAuth.currentUser.get().getBasicProfile();
+                    userName.innerHTML='Welcome, <u>'+userProfile.getEmail()+'</u> ';
+                } else {
+                    loginButton.value='Login';
+                    userName.innerHTML='Google Account';
+                }
+            }
+            function init(){
+                gapi.load('auth2', function(){
+                    window.gAuth = gapi.auth2.init({
+                        client_id:'393354206313-oa5mhjk226cctc7ncipmodvb12uiqqsb.apps.googleusercontent.com'
+                    })
+                    gAuth.then(function(){
+                        loginStatement();
+                    });
+                });
+            }
+        </script>
+        <!---->
         
         <!--<script src="./source/contrastcolors.js"></script>-->
     </head>
 
     <body>
+        <!-- Google Login -->
+        <!--<span id="username"></span><input type="button" id="loginbutton" value="Processing" onclick="
+            if(this.value === 'Login'){
+                gAuth.signIn().then(function(){
+                    loginStatement();
+                });
+            } else {
+                gAuth.signOut().then(function(){
+                    loginStatement();
+                });
+            }
+        ">-->
+        <!---->
+
         <h1>
             <a href="./indexJP.html">ポップアップ農場 @RiskWork/DoR</a>
         </h1>
@@ -85,6 +127,10 @@
                 });
             }
         </script>
+
+        <!-- Google Login -->
+        <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
+        <!---->        
     </body>
 
 </html>
